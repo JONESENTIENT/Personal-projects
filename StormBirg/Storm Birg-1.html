@@ -1,0 +1,151 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>StormBirg</title>
+	<style>
+		* { 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			background-color: white;
+		}
+		.h1 {
+			font-size: 6vh;
+			font-weight: bold;
+			color: #ffc500;
+			font-family: Calibri;
+			background-color: darkslategray;
+			width: 100%;
+			height: 10vh;
+			padding-top:1vh;
+			margin-bottom: 1vh;
+			padding-left: 3vw;
+			font-weight: bold;
+			
+		}
+
+		.searchcontainer {
+			width: 100%;
+			align-items: center;
+			justify-items: center;
+			margin-top: 1vh;
+			margin-bottom: 1.5vh;
+			display: flex;
+			justify-content: center;
+			gap: 1vw;
+			text-align:center;
+			font-weight: bold;
+			background-color: none;
+
+			
+		}
+
+		.menubutton {
+            width:1.6vw;
+			height:6vh;
+			border:none;
+			border-radius: 5px;
+			background-color:#ffc500;
+			justify-content: center;
+			justify-items: center;
+			align-content: center;
+		}
+        
+		.searchinput {
+			width:80%;
+			height:5vh;
+			padding-left: 3vw;
+			border:none;
+			border-radius: 10px;
+			background-color: white;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			font-family: Candara;
+			font-weight:bold;
+			color: #1e0c1b;
+			font-size:medium;
+		}
+
+
+		.searchbutton {
+			max-width:18%;
+			min-width: 18%;
+			height:5vh;
+			border:none;
+			border-radius: 15px;
+			background-color: darkslategrey;
+			color: #ffc500;
+			font-family: Candara;
+			font-weight: bold;
+			font-size: medium;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.filterbutton {
+            width:8vh;
+			height:5vh;
+			border:none;
+			border-radius: 10px;
+			border-bottom-left-radius: 2px;
+			margin-top:1vh;
+			margin-left: 1vw;
+			background-color: darkslategrey;
+			color: #ffc500;
+			font-family: Candara;
+			font-size: large;
+			font-weight: bold;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.resultscontainer {
+			width: 99%;
+			margin: 0 auto;
+			border-radius: 10px;
+			border-width: 2px solid #ffc500;
+			font-weight: bold;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			min-height: 76vh;
+			font-family: Candara;
+			background-color: white;
+		}
+
+		.infobutton {
+			margin-top: 10px;
+			justify-self: center;
+            width:100%;
+			height:6vh;
+			border:none;
+			padding-left: 20px;
+			background-color:#ffc500;
+			color: #1e0c1b;
+			font-family: Candara;
+			font-weight: bold;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="header">
+		<h1 class="h1 ">StormBirg</h1>
+	</div>
+	
+	<div class="searchcontainer" >
+		<input class="searchinput" placeholder="Search then filter..">
+	    <button onClick="display" class="searchbutton">Search</button>
+	</div>
+    <div class="containercenter">
+		<div id="input" class="resultscontainer" >
+			<button class="filterbutton">Filter</button>
+		</div>
+	</div>
+	
+		<button class="infobutton">About StormBirg . Contact Us . Download PC Version</button>
+
+<script src="ui.js"></script>		
+
+</body>
+</html>
