@@ -27,9 +27,15 @@ button = ctk.CTkButton(root, width=100, height=45, text='Generate', command=gene
 button.place(x=380,y=10)
 
 choice1 = ctk.CTkRadioButton(root, width=125, height=50, text='Include spaces?')
-choice1.place(x=200, y=70)
+choice1.place(x=150, y=70)
 
 choice2 = ctk.CTkRadioButton(root, width=125, height=50, text='Include alphanumerics?')
-choice2.place(x=350, y=70)
+choice2.place(x=300, y=70)
+
+choice3 = ctk.CTkEntry(root, width=50, height=50)
+choice3.place(x=10, y=70)
+
+label = ctk.CTkLabel(root, width=90, height=50, text='Characters')
+label.place(x=60,y=70)
 
 root.mainloop()
