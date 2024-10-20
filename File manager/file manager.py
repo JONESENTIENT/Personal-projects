@@ -1,15 +1,54 @@
-import customtkinter as ctk
 import os
 
-root = ctk.CTk()
-root.geometry('800x600')
-root.title('Study Folder')
+class File:
+    def __init__(self, name, size):
+        self.name = name
+        self.size = size
+    
+    def display(self, indent=0):
+        print(" " * indent + f"File: {self.name} (Size: {self.size} bytes)")
+    
+    def full_path(self):
+        return os.path.join(self.parent.path, self.name) if self.parent else self.name
 
-study_folder = r'C:\Users'
+class Directory:
+    def __init__(self, name, path=None):
+        self.name = name
+        self.children = []
+        self.parent = None  # Reference to the parent directory
+        self.path = path if path else self.name  # Set the directory path
+    
+    def add_child(self, child):
+        child.parent = self  # Set the parent of the child
+        self.children.append(child)
+        if isinstance(child, Directory):
+            child.path = os.path.join(self.path, child.name)  # Set full path for subdirectories
+    
+    def display(self, indent=0):
+        print(" " * indent + f"Directory: {self.name} (Path: {self.path})")
+        for child in self.children:
+            child.display(indent + 4)
 
-folder_list = [f for f in os.listdir(study_folder) if not os.path.isfile(os.path.join(study_folder, f))]
-file_list = [f for f in os.listdir(study_folder) if os.path.isfile(os.path.join(study_folder, f))]
+# Creating a file tree with C drive as the root path
+root_path = "C:\\"
+root = Directory("root", path=root_path)
+sub_dir1 = Directory("Documents")
+sub_dir2 = Directory("Pictures")
 
-print(folder_list, file_list)
+file1 = File("file1.txt", 1000)
+file2 = File("file2.jpg", 2500)
+file3 = File("file3.txt", 500)
 
-#root.mainloop()
+# Constructing the hierarchy
+root.add_child(sub_dir1)
+root.add_child(sub_dir2)
+
+sub_dir1.add_child(file1)
+sub_dir2.add_child(file2)
+sub_dir2.add_child(file3)
+
+# Display the file tree
+root.display()
+
+# Display the full path of a file
+print(f"Full path of file2: {file2.full_path()}")
