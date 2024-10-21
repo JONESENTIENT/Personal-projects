@@ -32,23 +32,5 @@ class Directory:
 # Creating a file tree with C drive as the root path
 root_path = "C:\\"
 root = Directory("root", path=root_path)
-sub_dir1 = Directory("Documents")
-sub_dir2 = Directory("Pictures")
 
-file1 = File("file1.txt", 1000)
-file2 = File("file2.jpg", 2500)
-file3 = File("file3.txt", 500)
-
-# Constructing the hierarchy
-root.add_child(sub_dir1)
-root.add_child(sub_dir2)
-
-sub_dir1.add_child(file1)
-sub_dir2.add_child(file2)
-sub_dir2.add_child(file3)
-
-# Display the file tree
 root.display()
-
-# Display the full path of a file
-print(f"Full path of file2: {file2.full_path()}")

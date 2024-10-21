@@ -1,6 +1,7 @@
 import pygame
 import sys
 import os
+import customtkinter as ctk
 
 def play_audio(file_path):
     pygame.mixer.init(frequency=44100, size=-16, channels=2)
@@ -29,6 +30,9 @@ def find_audio_files(start_directory):
 
     return audio_files
 
+app = ctk.CTk()
+app.geometry('800x600')
+app.title('Audio Player')
 if __name__ == "__main__":
     start_dir = r'C:\Users\LENOVO'
     audio_files_dict = find_audio_files(start_dir)
@@ -39,7 +43,13 @@ if __name__ == "__main__":
 
     print(f"Found audio files:{num}")
     
+    slides = []
+    for value in audio_files_dict.values():
+        slides.append(value)
+        
     #code to play song from dictionary
     
     pygame.quit()
     sys.exit()
+
+app.mainloop()
