@@ -50,6 +50,9 @@ while True:
         marks = []
         admin_nos = list(gradebook.keys())
         admin_no = str(len(admin_nos) + 1)
+        while admin_no in admin_nos:
+                str(int(admin_no) + 1)
+
         name = 'John Doe' #input('Enter name: ')
         subs =  ['Maths', 'English', 'Science', 'SST']
 
