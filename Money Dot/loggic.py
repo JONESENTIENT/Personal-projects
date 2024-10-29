@@ -14,8 +14,6 @@ pygame.display.set_icon(icon)
 
 # background
 background = pygame.image.load('Money Dot/background.png')
-mixer.music.load('Money Dot/bg.wav')
-mixer.music.play(-1)
 
 #player
 player_img = pygame.image.load('Money Dot/player.png')
@@ -36,7 +34,7 @@ for i in range(num):
     enemy_img.append(pygame.image.load('Money Dot/enemy.png'))
     ex.append(random.randint(0,735))
     ey.append(0)
-    exc.append(0.3)
+    exc.append(3)
     eyc.append(40)
 
 def enemy(x,y, i):
@@ -81,10 +79,10 @@ while running:
         #keypreses
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                pc = -0.5
+                pc = -3
 
             elif event.key == pygame.K_RIGHT:
-                pc = 0.5
+                pc = 3
 
             elif event.key == pygame.K_SPACE:
                 if b_state == 'ready':
@@ -105,10 +103,10 @@ while running:
     for i in range(num):
         ex[i] += exc[i]
         if ex[i] <= 0: #enemy movement
-            exc[i] = 0.3
+            exc[i] = 3
             ey[i] += eyc[i]
         elif ex[i]  >= 736:
-            exc[i] = -0.3
+            exc[i] = -3
             ey[i] += eyc[i]
 
         collision = Collision(i,ex,ey,bx,by) #check collision
@@ -125,8 +123,8 @@ while running:
         b_state = 'ready'
     if b_state == 'fire': #bullet movement
         fire(bx, by)
-        by -= 1
+        by -= 10
 
     player(px,py)
-    show_score(10,10)
+    show_score(10,10) 
     pygame.display.update()
