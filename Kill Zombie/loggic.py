@@ -9,8 +9,8 @@ pygame.init()
 #game window
 screen = pygame.display.set_mode((800,600))
 pygame.display.set_caption('Space invaders')
-icon = pygame.image.load('Money Dot/logo.png')
-pygame.display.set_icon(icon)
+#icon = pygame.image.load('Money Dot/logo.png')
+#pygame.display.set_icon(icon)
 
 # background
 background = pygame.image.load('Money Dot/background.png')
