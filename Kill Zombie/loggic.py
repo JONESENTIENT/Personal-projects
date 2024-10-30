@@ -9,14 +9,14 @@ pygame.init()
 #game window
 screen = pygame.display.set_mode((800,600))
 pygame.display.set_caption('Space invaders')
-#icon = pygame.image.load('Money Dot/logo.png')
+#icon = pygame.image.load('Kill Zombie/logo.png')
 #pygame.display.set_icon(icon)
 
 # background
-background = pygame.image.load('Money Dot/background.png')
+background = pygame.image.load('Kill Zombie/background.png')
 
 #player
-player_img = pygame.image.load('Money Dot/player.png')
+player_img = pygame.image.load('Kill Zombie/player.png')
 px,py = 368, 500
 pc = 0
 
@@ -31,7 +31,7 @@ eyc = []
 num = 6
 
 for i in range(num):
-    enemy_img.append(pygame.image.load('Money Dot/enemy.png'))
+    enemy_img.append(pygame.image.load('Kill Zombie/enemy.png'))
     ex.append(random.randint(0,735))
     ey.append(0)
     exc.append(3)
@@ -41,7 +41,7 @@ def enemy(x,y, i):
     screen.blit(enemy_img[i], (ex[i],ey[i])) #draw enemy
 
 #bullet
-bullet_img = pygame.image.load('Money Dot/bullet.png')
+bullet_img = pygame.image.load('Kill Zombie/bullet.png')
 bx,by = px+8, py
 b_state = 'ready'
 
@@ -60,7 +60,7 @@ def Collision(i,ex,ey,bx,by):
 
 #score
 score_value = 0
-font = pygame.font.Font('Money Dot/calibrib.ttf', 32)
+font = pygame.font.Font('Kill Zombie/calibrib.ttf', 32)
 
 def show_score(x,y):
     score = font.render(f"Score : {str(score_value)}", True, (255, 255, 255))
