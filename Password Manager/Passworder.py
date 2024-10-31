@@ -6,21 +6,11 @@ def generate():
 
     word = ''
     num = choice3.get()
-    ch1= space.cget()
-    ch2 = alpha.cget()
-    print(space, alpha)
     if num >= 4 and num <= 10:
         for j in range(num):
             number = random.randint(0,45)
             letter = letters[number]
-            if space == 0:
-                if letter in r' ':
-                    continue
-            elif alpha == 0:
-                if letter in r'#.,@\n/?-_':
-                    continue
-            else:
-                word += letter
+            word += letter
 
         label.configure(text=word)
     elif num < 4 or num > 10:
@@ -43,10 +33,10 @@ label.place(x=0,y=0)
 button = ctk.CTkButton(root, width=100, height=45, text='Generate', command=generate)
 button.place(x=380,y=10)
 
-choice1 = ctk.CTkRadioButton(root, width=125, height=50, variable=space, value='Include spaces?')
+choice1 = ctk.CTkRadioButton(root, width=125, height=50,value='Include spaces?')
 choice1.place(x=180, y=70)
 
-choice2 = ctk.CTkRadioButton(root, width=125, height=50, variable=alpha, value='Include alphanumerics?')
+choice2 = ctk.CTkRadioButton(root, width=125, height=50,value='Include alphanumerics?')
 choice2.place(x=330, y=70)
 
 choice3 = ctk.CTkEntry(root, width=50, height=50)
